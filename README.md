@@ -1,3 +1,3 @@
-# Learning-Java
+# Java notes and Projects
 
-Will be updated after final exams
+Will be updated
