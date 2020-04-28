@@ -5,6 +5,7 @@
  */
 package javaprocjt;
 
+import com.sun.xml.internal.ws.api.ha.StickyFeature;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -16,15 +17,13 @@ import java.util.Date;
  */
 
 public class Departments extends Administration{
-    private boolean chair;
-    private boolean deputy;
+    private String postion;
+    
 
-    public Departments(boolean chair, boolean deputy, String FullName, int appointyear) {
-        super(FullName, appointyear);
-        this.chair = chair;
-        this.deputy = deputy;
+    public Departments(int id, String FullName, int appointyear,String postion) {
+        super(id, FullName, appointyear);
+        this.postion=postion;
     }
-
      public void ShowSystemRegistrationDate(){
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	Date date = new Date();
@@ -33,15 +32,16 @@ public class Departments extends Administration{
     
     @Override
     public String toString() {
-        return "Departments{" + "chair=" + chair + ", deputy=" + deputy + '}';
+        return "Department "+"Position "+postion;
     }
 
-    public boolean isChair() {
-        return chair;
+    public String getPostion() {
+        return postion;
     }
 
-    public boolean isDeputy() {
-        return deputy;
+    
+    public int getYear() {
+        return super.getAppointyear();
     }
 
    

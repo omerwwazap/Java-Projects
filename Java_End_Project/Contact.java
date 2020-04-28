@@ -14,13 +14,13 @@ package javaprocjt;
 public class Contact {
     
     private String email;
-    private String phoneNumber;
     private boolean isStudent;
     private String officeNumber;
+    private int id;
 
-    public Contact(String email, String phoneNumber, boolean isStudent, String officeNumber) {
+    public Contact(int id,String email,boolean isStudent, String officeNumber) {
+        this.id=id;
         this.email = email;
-        this.phoneNumber = phoneNumber;
         this.isStudent = isStudent;
         this.officeNumber = officeNumber;
     }
@@ -28,10 +28,10 @@ public class Contact {
     @Override
     public String toString() {
         if (isStudent) {
-            return "Contact{" + "email=" + email + ", phoneNumber=" + phoneNumber;
+            return "Contact{" + "email=" + email ;
         }
         else {
-        return "Contact{" + "email=" + email + ", phoneNumber=" + phoneNumber + 
+        return "Contact{" + "email=" + email + 
                     "OfficeNumber=" + officeNumber + '}';
         }
         
@@ -41,16 +41,32 @@ public class Contact {
         return email;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
     public boolean isIsStudent() {
         return isStudent;
     }
 
     public String getOfficeNumber() {
         return officeNumber;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setIsStudent(boolean isStudent) {
+        this.isStudent = isStudent;
+    }
+
+    public void setOfficeNumber(String officeNumber) {
+        this.officeNumber = officeNumber;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
     
          

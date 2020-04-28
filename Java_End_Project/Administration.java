@@ -12,13 +12,21 @@ package javaprocjt;
  */
 public abstract class Administration implements Binterface{
     
+    private int id;
     private String FullName;
     private int appointyear;
 
-    public Administration(String FullName, int appointyear) {
+    public Administration(int id, String FullName, int appointyear) {
+        this.id = id;
         this.FullName = FullName;
         this.appointyear = appointyear;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    
 
     @Override
     public String toString() {

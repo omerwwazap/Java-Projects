@@ -7,6 +7,7 @@ package javaprocjt;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -17,37 +18,37 @@ import java.util.Date;
 public class Students extends AcademicUnits{
     
     private double cgpa;
-    private String courses;
-    private int gradyear;
     private static int numberofStu=0;
+    Project project ;
 
+    public Project getProject() {
+        return project;
+    }
     public static int getNumberofStu() {
         return numberofStu;
     }
 
+    @Override
     public void ShowSystemRegistrationDate(){
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	Date date = new Date();
 	System.out.println(dateFormat.format(date)); //2018/12/12 12:08:43
     }
-    
-    public Students(double cgpa, String courses, int gradyear, String FullName, String deapertmentName, int idNumber) {
-        super(FullName, deapertmentName, idNumber);
+
+    public Students(double cgpa, String FullName, String deapertmentName, int idNumber, Contact contact,Project project) {
+        super(FullName, deapertmentName, idNumber, contact);
         this.cgpa = cgpa;
-        this.courses = courses;
-        this.gradyear = gradyear;
         numberofStu++;
+        super.setIsStu(true);
+        this.project=project;
     }
 
     @Override
     public String toString() {
-        return "Students{" + "cgpa=" + cgpa + ", courses=" + courses + ", gradyear=" + gradyear + '}';
-    }
-    
-    
+        String str = "\nProjects: ";
 
-    
-    
-    
+        return "Students:" + "\nCgpa:" + cgpa + "\nCourses=" + "courses" + "\nGraduation Year:" + "gradyear" + str;
+    }
+
     
 }

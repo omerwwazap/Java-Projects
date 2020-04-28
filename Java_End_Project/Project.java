@@ -15,14 +15,14 @@ public class Project{
     
     private String title;
     private String field;
-    private String owner;
+   
     private String Shortdesc;
     private boolean needhelp;
 
-    public Project(String title, String field, String owner, String Shortdesc, boolean needhelp) {
+    public Project(String title, String field,String Shortdesc, boolean needhelp) {
         this.title = title;
         this.field = field;
-        this.owner = owner;
+       
         this.Shortdesc = Shortdesc;
         this.needhelp = needhelp;
     }
@@ -30,11 +30,13 @@ public class Project{
     @Override
     public String toString() {
         return "Project{" + "title=" + title + ", field=" + field + 
-                ", owner=" + owner + ", Shortdesc=" + Shortdesc + 
+                ", Shortdesc=" + Shortdesc + 
                 ", needhelp=" + needhelp + '}';
     }
 
-    
+    public boolean gethelp() {
+        return needhelp;
+    }
     
     public String getTitle() {
         return title;
@@ -44,19 +46,8 @@ public class Project{
         return field;
     }
 
-    public String getOwner() {
-        return owner;
-    }
-
     public String getShortdesc() {
         return Shortdesc;
     }
 
-    public boolean isNeedhelp() {
-        return needhelp;
-    }
-    
-    
-    
-    
 }

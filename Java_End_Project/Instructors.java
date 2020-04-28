@@ -7,6 +7,7 @@ package javaprocjt;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -19,10 +20,11 @@ public class Instructors extends AcademicUnits {
     protected String coursesgiven;
     protected String almaMater;//Grad university
 
-    public Instructors(String coursesgiven, String almaMater, String FullName, String deapertmentName, int idNumber) {
-        super(FullName, deapertmentName, idNumber);
+    public Instructors(String coursesgiven, String almaMater, String FullName, String deapertmentName, int idNumber, Contact list) {
+        super(FullName, deapertmentName, idNumber, list);
         this.coursesgiven = coursesgiven;
         this.almaMater = almaMater;
+        super.setIsStu(false);
     }
 
      public void ShowSystemRegistrationDate(){

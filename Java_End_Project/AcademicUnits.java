@@ -5,6 +5,10 @@
  */
 package javaprocjt;
 
+import java.util.ArrayList;
+
+
+
 /**
  *
  * @author Levent Durdali
@@ -15,16 +19,21 @@ public abstract class AcademicUnits  implements Binterface{
     protected String FullName;
     protected String deapertmentName;
     protected int idNumber;
+    protected boolean isStu;
+    Contact contact;
    
 
-    public AcademicUnits(String FullName, String deapertmentName, int idNumber) {
+    public AcademicUnits(String FullName, String deapertmentName, int idNumber,Contact contact) {
         this.FullName = FullName;
         this.deapertmentName = deapertmentName;
         this.idNumber = idNumber;
+        this.contact=contact;
      
     }
 
-    
+    public void setIsStu(boolean isStu) {
+        this.isStu = isStu;
+    }
 
     public String getFullName() {
         return FullName;
